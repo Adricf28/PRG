@@ -5,13 +5,36 @@ public class Main {
     static boolean continuar = true;
 
     public static void main(String[] args) {
-        pushTry();
+        //pushTry();
         /*while (continuar) {
             mostrarMenu();
             hacerFuncion(recogerFuncion());
         }*/
 
-        System.out.println("Finalizando el programa...");
+        System.out.printf("Yo: %s\n", diaSemana(1, 98));
+        System.out.printf("Maria: %s\n", diaaSemana(1, 98));
+
+        //System.out.println("Finalizando el programa...");
+    }
+
+    //Dia semana by Maria
+    public static String obtenerNombreDia(int indice) {
+        switch (indice) {
+            case 1: return "lunes";
+            case 2: return "martes";
+            case 3: return "miercoles";
+            case 4: return "jueves";
+            case 5: return "viernes";
+            case 6: return "sabado";
+            case 7: return "domingo";
+            default: return "dia no valido";
+        }
+    }
+
+    public static String diaaSemana(int diaContar, int diaBase) {
+        int indice = (diaBase + diaContar) % 7; //veri interestin sisissi
+        if (indice == 0) indice = 7;
+        return obtenerNombreDia(indice);
     }
 
     private static String[] pushS(String[] arr, String add) {
@@ -127,35 +150,6 @@ public class Main {
     private static boolean mayorDeEdad(int n) {
         return n >= 18;
     }
-
-    /*private static String diaSemana(int diaSemana, int contador) {
-
-        for (int i = 0; i < contador; i++) {
-            if (diaSemana == 7) {
-                diaSemana = 0;
-            }
-            diaSemana++;
-        }
-
-        if (diaSemana == 1) {
-            return "Lunes";
-        } else if (diaSemana == 2) {
-            return "Martes";
-        } else if (diaSemana == 3) {
-            return "Miercoles";
-        } else if (diaSemana == 4) {
-            return "Jueves";
-        } else if (diaSemana == 5) {
-            return "Viernes";
-        } else if (diaSemana == 6) {
-            return "Sabado";
-        } else if (diaSemana == 7) {
-            return "Domingo";
-        } else {
-            System.out.printf("diaSemana: %d\n", diaSemana);
-            return "Las liao primo";
-        }
-    }*/
 
     private static String diaSemana(int diaSemana, int contador) {
         String[] semana = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
