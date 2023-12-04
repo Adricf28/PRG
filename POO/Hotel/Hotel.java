@@ -1,8 +1,16 @@
 public class Hotel {
+    //ATRIBUTOS
     private static final int NUM_CLIENTES_MAX = 1000;
     private String nombre;
     private String direccion;
     private Cliente[] misClientes;
+
+    //CONSTRUCTORES
+    public Hotel() {
+        this.nombre = "";
+        this.direccion = "";
+        this.misClientes = new Cliente[NUM_CLIENTES_MAX];
+    }
 
     public Hotel(String nombre, String direccion) {
         this.nombre = nombre;
@@ -10,6 +18,7 @@ public class Hotel {
         this.misClientes = new Cliente[NUM_CLIENTES_MAX];
     }
 
+    //GETTERS Y SETTERS
     public String getNombre() {
         return nombre;
     }
@@ -34,6 +43,7 @@ public class Hotel {
         this.misClientes = misClientes;
     }
 
+    //METODOS
     public Cliente[] listaDeClientes() {
         Cliente[] copia;
 
@@ -67,7 +77,6 @@ public class Hotel {
     public boolean search(String dni) {
         for (int i = 0; i < misClientes.length; i++) {
             if (misClientes[i].getDni() == dni) {
-                System.out.println("sisisi");
                 return true;
             }
         }
