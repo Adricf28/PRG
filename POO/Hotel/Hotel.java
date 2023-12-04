@@ -46,7 +46,9 @@ public class Hotel {
     //METODOS
     public void listar() {
         for (int i = 0; i < misClientes.length; i++) {
-            System.out.printf("Nombre: %s, DNI: %s, Gmail: %s\n\n", misClientes[i].getNombre(), misClientes[i].getDni(), misClientes[i].getGmail());
+            if (misClientes[i] != null) {
+                System.out.printf("Nombre: %s, DNI: %s, Gmail: %s\n\n", misClientes[i].getNombre(), misClientes[i].getDni(), misClientes[i].getGmail());
+            }
         }
     }
 
@@ -67,7 +69,7 @@ public class Hotel {
     public boolean remove(String dni) {
         try {
             for (int i = 0; i < misClientes.length; i++) {
-                if (misClientes[i].getDni() == dni) {
+                if (misClientes[i].getDni().equalsIgnoreCase(dni)) {
                     misClientes[i] = null;
                     return true;
                 }
@@ -78,16 +80,16 @@ public class Hotel {
         return false;
     }
 
-    public boolean search(String dni) {
+    public Cliente search(String dni) {
         try {
             for (int i = 0; i < misClientes.length; i++) {
-                if (misClientes[i].getDni() == dni) {
-                    return true;
+                if (misClientes[i].getDni().equalsIgnoreCase(dni)) {
+                    return misClientes[i];
                 }
             }
         } catch (Exception e) {
-            return false;
+            return null;
         }
-        return false;
+        return null;
     }
 }

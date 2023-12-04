@@ -59,47 +59,34 @@ public class Principal {
             }
         }*/
 
-
         Hotel hotel1 = new Hotel("Playabonita", "Calle Barca");
         Cliente cliente1 = new Cliente("Adrian", "26838689N", "adricf2807@gmail.com");
-        Cliente cliente2 = new Cliente("Paco", "33394592H", "pacocg1971@gmail.com");
+        Cliente cliente2 = new Cliente("Francisco", "33394592H", "pacocg1971@gmail.com");
 
         if (hotel1.add(cliente1)) {
-            System.out.println("Se ha añadido el cliente correctamente\n");
+            System.out.println("Se ha añadido el cliente " + cliente1.getNombre() + " correctamente\n");
         } else {
             System.out.println("No hay espacio para mas clientes\n");
         }
 
         if (hotel1.add(cliente2)) {
-            System.out.println("Se ha añadido el cliente correctamente\n");
+            System.out.println("Se ha añadido el cliente " + cliente2.getNombre() + " correctamente\n");
         } else {
             System.out.println("No hay espacio para mas clientes\n");
-        }
-
-        if (hotel1.search(cliente1.getDni())) {
-            System.out.println("El cliente se encuentra en este hotel\n");
-        } else {
-            System.out.println("No se ha podido encontrar al cliente\n");
-        }
-
-        if (hotel1.search(cliente2.getDni())) {
-            System.out.println("El cliente se encuentra en este hotel\n");
-        } else {
-            System.out.println("No se ha podido encontrar al cliente\n");
         }
 
         hotel1.listar();
 
         if (hotel1.remove(cliente1.getDni())) {
-            System.out.println("Cliente eliminado correctamente\n");
+            System.out.println("Cliente " + cliente1.getNombre() + " eliminado correctamente\n");
         } else {
             System.out.println("No se ha podido eliminar al cliente\n");
         }
 
         if (hotel1.remove(cliente2.getDni())) {
-            System.out.println("Cliente eliminado correctamente\n");
+            System.out.println("Cliente " + cliente2.getNombre() + " eliminado correctamente\n");
         } else {
-            System.out.println("No se ha podido eliminar al cliente\n");
+            System.out.println("No se ha podido eliminar al cliente " + cliente2.getNombre() + "\n");
         }
     }
 }
