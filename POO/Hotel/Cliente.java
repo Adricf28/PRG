@@ -1,8 +1,10 @@
 public class Cliente {
+    //ATRIBUTOS
     private String nombre;
     private String dni;
     private String gmail;
 
+    //CONSTRUCTORES
     public Cliente() {
         this.nombre = "";
         this.dni = "";
@@ -15,6 +17,7 @@ public class Cliente {
         this.gmail = gmail;
     }
 
+    //GETTERS Y SETTERS
     public String getNombre() {
         return nombre;
     }

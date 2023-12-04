@@ -21,7 +21,6 @@ public class Promocion {
     }
 
     //GETTERS Y SETTERS
-
     public int getCodigo() {
         return codigo;
     }

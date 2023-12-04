@@ -44,41 +44,49 @@ public class Hotel {
     }
 
     //METODOS
-    public Cliente[] listaDeClientes() {
-        Cliente[] copia;
-
-        copia = new Cliente[NUM_CLIENTES_MAX];
-
-        //copiar cada uno de los clientes en copia
-
-        return copia;
+    public void listar() {
+        for (int i = 0; i < misClientes.length; i++) {
+            System.out.printf("Nombre: %s, DNI: %s, Gmail: %s\n\n", misClientes[i].getNombre(), misClientes[i].getDni(), misClientes[i].getGmail());
+        }
     }
 
     public boolean add(Cliente nuevoCliente) {
-        for (int i = 0; i < misClientes.length; i++) {
-            if (misClientes[i] == null) {
-                misClientes[i] = nuevoCliente;
-                return true;
+        try {
+            for (int i = 0; i < misClientes.length; i++) {
+                if (misClientes[i] == null) {
+                    misClientes[i] = nuevoCliente;
+                    return true;
+                }
             }
+        } catch (Exception e) {
+            return false;
         }
         return false;
     }
 
     public boolean remove(String dni) {
-        for (int i = 0; i < misClientes.length; i++) {
-            if (misClientes[i].getDni() == dni) {
-                misClientes[i] = null;
-                return true;
+        try {
+            for (int i = 0; i < misClientes.length; i++) {
+                if (misClientes[i].getDni() == dni) {
+                    misClientes[i] = null;
+                    return true;
+                }
             }
+        } catch (Exception e) {
+            return false;
         }
         return false;
     }
 
     public boolean search(String dni) {
-        for (int i = 0; i < misClientes.length; i++) {
-            if (misClientes[i].getDni() == dni) {
-                return true;
+        try {
+            for (int i = 0; i < misClientes.length; i++) {
+                if (misClientes[i].getDni() == dni) {
+                    return true;
+                }
             }
+        } catch (Exception e) {
+            return false;
         }
         return false;
     }
