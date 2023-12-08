@@ -1,34 +1,23 @@
 import java.util.Scanner;
 
 public class Principal {
+    static final Scanner sc = new Scanner(System.in);
+    static String op, s1, s2;
     public static void main(String[] args) {
-        /*Scanner sc = new Scanner(System.in);
-        String op, s1, s2;
         Cliente cliente1 = new Cliente();
         Hotel hotel1 = new Hotel();
 
         while(true) {
-            System.out.println("a) Definir hotel\nb) Añadir cliente\nc) Eliminar cliente\nd) Buscar cliente\ncualquier otra) Salir");
+            System.out.println("a) Definir hotel\nb) Añadir cliente\nc) Eliminar cliente\nd) Buscar cliente\ne) Listar clientes\ncualquier otra) Salir");
             System.out.print("Seleccion: ");
             op = sc.nextLine();
 
             if (op.equalsIgnoreCase("a")) {
-                System.out.print("Escribe el nombre del hotel: ");
-                op = sc.nextLine();
-                System.out.print("Escribe la direccion del hotel: ");
-                s1 = sc.nextLine();
-                hotel1 = new Hotel(op, s1);
-
+                hotel1 = crearHotel();
                 System.out.println("Hotel creado correctamente\n");
-            } else if (op.equalsIgnoreCase("b")) {
-                System.out.println("Primero hay que crear un cliente");
-                System.out.print("Escribe el nombre del cliente: ");
-                op = sc.nextLine();
-                System.out.print("Escribe el dni del cliente: ");
-                s1 = sc.nextLine();
-                System.out.print("Escribe el gmail del cliente: ");
-                s2 = sc.nextLine();
-                cliente1 = new Cliente(op, s1, s2);
+            }
+            else if (op.equalsIgnoreCase("b")) {
+                cliente1 = crearCliente();
 
                 if (hotel1.add(cliente1)) {
                     System.out.println("Se ha añadido el cliente correctamente\n");
@@ -36,7 +25,8 @@ public class Principal {
                     System.out.println("No hay espacio para mas clientes\n");
                 }
 
-            } else if (op.equalsIgnoreCase("c")) {
+            }
+            else if (op.equalsIgnoreCase("c")) {
                 System.out.print("Introduce el dni del cliente que quieres eliminar: ");
                 op = sc.nextLine();
 
@@ -45,7 +35,8 @@ public class Principal {
                 } else {
                     System.out.println("No se ha podido eliminar al cliente\n");
                 }
-            } else if (op.equalsIgnoreCase("d")) {
+            }
+            else if (op.equalsIgnoreCase("d")) {
                 System.out.print("Introduce el dni del cliente que quieres buscar: ");
                 op = sc.nextLine();
 
@@ -54,39 +45,42 @@ public class Principal {
                 } else {
                     System.out.println("No se ha podido encontrar al cliente\n");
                 }
-            } else {
+            }
+            else if (op.equalsIgnoreCase("e")) {
+                hotel1.listar();
+            }
+            else {
                 break;
             }
-        }*/
-
-        Hotel hotel1 = new Hotel("Playabonita", "Calle Barca");
-        Cliente cliente1 = new Cliente("Adrian", "26838689N", "adricf2807@gmail.com");
-        Cliente cliente2 = new Cliente("Francisco", "33394592H", "pacocg1971@gmail.com");
-
-        if (hotel1.add(cliente1)) {
-            System.out.println("Se ha añadido el cliente " + cliente1.getNombre() + " correctamente\n");
-        } else {
-            System.out.println("No hay espacio para mas clientes\n");
         }
 
-        if (hotel1.add(cliente2)) {
-            System.out.println("Se ha añadido el cliente " + cliente2.getNombre() + " correctamente\n");
-        } else {
-            System.out.println("No hay espacio para mas clientes\n");
-        }
+        System.out.println("Finalizando el programa...");
+    }
 
-        hotel1.listar();
+    public static Hotel crearHotel() {
+        Hotel nuevoHotel;
 
-        if (hotel1.remove(cliente1.getDni())) {
-            System.out.println("Cliente " + cliente1.getNombre() + " eliminado correctamente\n");
-        } else {
-            System.out.println("No se ha podido eliminar al cliente\n");
-        }
+        System.out.print("Escribe el nombre del hotel: ");
+        op = sc.nextLine();
+        System.out.print("Escribe la direccion del hotel: ");
+        s1 = sc.nextLine();
 
-        if (hotel1.remove(cliente2.getDni())) {
-            System.out.println("Cliente " + cliente2.getNombre() + " eliminado correctamente\n");
-        } else {
-            System.out.println("No se ha podido eliminar al cliente " + cliente2.getNombre() + "\n");
-        }
+        nuevoHotel = new Hotel(op, s1);
+        return nuevoHotel;
+    }
+
+    public static Cliente crearCliente() {
+        Cliente nuevoCliente;
+
+        System.out.println("Primero hay que crear un cliente");
+        System.out.print("Escribe el nombre del cliente: ");
+        op = sc.nextLine();
+        System.out.print("Escribe el dni del cliente: ");
+        s1 = sc.nextLine();
+        System.out.print("Escribe el gmail del cliente: ");
+        s2 = sc.nextLine();
+
+        nuevoCliente = new Cliente(op, s1, s2);
+        return nuevoCliente;
     }
 }

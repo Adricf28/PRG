@@ -53,43 +53,31 @@ public class Hotel {
     }
 
     public boolean add(Cliente nuevoCliente) {
-        try {
-            for (int i = 0; i < misClientes.length; i++) {
-                if (misClientes[i] == null) {
-                    misClientes[i] = nuevoCliente;
-                    return true;
-                }
+        for (int i = 0; i < misClientes.length; i++) {
+            if (misClientes[i] == null) {
+                misClientes[i] = nuevoCliente;
+                return true;
             }
-        } catch (Exception e) {
-            return false;
         }
         return false;
     }
 
     public boolean remove(String dni) {
-        try {
-            for (int i = 0; i < misClientes.length; i++) {
-                if (misClientes[i].getDni().equalsIgnoreCase(dni)) {
-                    misClientes[i] = null;
-                    return true;
-                }
+        for (int i = 0; i < misClientes.length; i++) {
+            if (misClientes[i] != null && misClientes[i].getDni().equalsIgnoreCase(dni)) {
+                misClientes[i] = null;
+                return true;
             }
-        } catch (Exception e) {
-            return false;
         }
         return false;
     }
 
-    public Cliente search(String dni) {
-        try {
-            for (int i = 0; i < misClientes.length; i++) {
-                if (misClientes[i].getDni().equalsIgnoreCase(dni)) {
-                    return misClientes[i];
-                }
+    public boolean search(String dni) {
+        for (int i = 0; i < misClientes.length; i++) {
+            if (misClientes[i] != null && misClientes[i].getDni().equalsIgnoreCase(dni)) {
+                return true;
             }
-        } catch (Exception e) {
-            return null;
         }
-        return null;
+        return false;
     }
 }
