@@ -3,6 +3,10 @@ public class Cliente {
     private String nombre;
     private String dni;
     private String gmail;
+    private String direccion;
+    private String telefono;
+    private int edad;
+    private String fechaNacimiento;
 
     //CONSTRUCTORES
     public Cliente() {
@@ -15,6 +19,16 @@ public class Cliente {
         this.nombre = nombre;
         this.dni = dni;
         this.gmail = gmail;
+    }
+
+    public Cliente(String nombre, String dni, String gmail, String direccion, String telefono, int edad, String fechaNacimiento) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.gmail = gmail;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     //GETTERS Y SETTERS

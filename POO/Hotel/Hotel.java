@@ -1,8 +1,13 @@
+import java.awt.*;
+
 public class Hotel {
     //ATRIBUTOS
     private static final int NUM_CLIENTES_MAX = 1000;
     private String nombre;
     private String direccion;
+    private String telefono;
+    private String email;
+    private String descripcion;
     private Cliente[] misClientes;
 
     //CONSTRUCTORES
@@ -16,6 +21,15 @@ public class Hotel {
         this.nombre = nombre;
         this.direccion = direccion;
         this.misClientes = new Cliente[NUM_CLIENTES_MAX];
+    }
+
+    public Hotel(String nombre, String direccion, String telefono, String email, String descripcion, Cliente[] misClientes) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.descripcion = descripcion;
+        this.misClientes = misClientes;
     }
 
     //GETTERS Y SETTERS
@@ -44,14 +58,6 @@ public class Hotel {
     }
 
     //METODOS
-    public void listar() {
-        for (int i = 0; i < misClientes.length; i++) {
-            if (misClientes[i] != null) {
-                System.out.printf("Nombre: %s, DNI: %s, Gmail: %s\n\n", misClientes[i].getNombre(), misClientes[i].getDni(), misClientes[i].getGmail());
-            }
-        }
-    }
-
     public boolean add(Cliente nuevoCliente) {
         for (int i = 0; i < misClientes.length; i++) {
             if (misClientes[i] == null) {

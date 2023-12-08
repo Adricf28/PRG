@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Principal {
     static final Scanner sc = new Scanner(System.in);
-    static String op, s1, s2;
+    static String op, s1, s2, s3;
     public static void main(String[] args) {
-        Cliente cliente1 = new Cliente();
         Hotel hotel1 = new Hotel();
+        Cliente cliente1 = new Cliente();
 
         while(true) {
-            System.out.println("a) Definir hotel\nb) Añadir cliente\nc) Eliminar cliente\nd) Buscar cliente\ne) Listar clientes\ncualquier otra) Salir");
+            System.out.println("a) Definir hotel\nb) Añadir cliente\nc) Eliminar cliente\nd) Buscar cliente\ne) Listar clientes\nf) Crear promocion\ncualquier otra) Salir");
             System.out.print("Seleccion: ");
             op = sc.nextLine();
 
@@ -47,7 +47,11 @@ public class Principal {
                 }
             }
             else if (op.equalsIgnoreCase("e")) {
-                hotel1.listar();
+                listar(hotel1);
+            }
+            else if (op.equalsIgnoreCase("f")) {
+                crearPromocion();
+                System.out.println("La promocion se ha creado correctamente\n");
             }
             else {
                 break;
@@ -82,5 +86,33 @@ public class Principal {
 
         nuevoCliente = new Cliente(op, s1, s2);
         return nuevoCliente;
+    }
+
+    public static Promocion crearPromocion() {
+        Promocion nuevaPromocion;
+
+        System.out.print("Introduce el codigo de la promocion: ");
+        op = sc.nextLine();
+        System.out.print("Introduce la edad minima: ");
+        s1 = sc.nextLine();
+        System.out.print("Introduce la edad maxima: ");
+        s2 = sc.nextLine();
+        System.out.print("Describe la promocion: ");
+        s3 = sc.nextLine();
+
+        nuevaPromocion = new Promocion(Integer.valueOf(op), Integer.valueOf(s1), Integer.valueOf(s2), s3);
+        return nuevaPromocion;
+    }
+
+    public static void listar(Hotel ht) {
+        Cliente[] clientes = ht.getMisClientes();
+
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] != null) {
+                System.out.printf("Nombre: %s, DNI: %s, Gmail: %s\n", clientes[i].getNombre(), clientes[i].getDni(), clientes[i].getGmail());
+            }
+        }
+
+        System.out.println();
     }
 }
