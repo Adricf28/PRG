@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Hotel {
     //ATRIBUTOS
     private static final int NUM_CLIENTES_MAX = 1000;
