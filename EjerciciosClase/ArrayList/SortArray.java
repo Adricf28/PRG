@@ -1,11 +1,11 @@
 public class SortArray {
     public static void main(String[] args) {
-        String[] strArr = {"uno", "dos", "tres", "cuatro", "cinco"};
+        String[] strArr = {"uno", "dos", "tres", "cuatro", "cinco", "seis"};
 
         listar(strArr);
         strArr[0] = null;
         strArr[2] = null;
-        strArr[3] = null;
+        strArr[4] = null;
         listar(strArr);
         sort(strArr);
         listar(strArr);
