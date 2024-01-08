@@ -7,6 +7,10 @@ public class Cuenta {
     protected float comisionMensual=0;
 
     //CONSTRUCTORES
+    public Cuenta() {
+        this.saldo = 0;
+        this.tasaAnual = 0;
+    }
     public Cuenta(float saldo, float tasaAnual) {
         this.saldo = saldo;
         this.tasaAnual = tasaAnual;
