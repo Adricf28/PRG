@@ -19,11 +19,13 @@ public class Cuenta {
     //METODOS
     public void consignar(float nuevoSaldo) {
         this.saldo += nuevoSaldo;
+        consignaciones++;
     }
     public void retirar(float saldo) {
         if (saldo <= this.saldo) {
             this.saldo -= saldo;
         }
+        this.retiros++;
     }
     public float interes(){
         float tasaMensual = this.tasaAnual % 12;
@@ -33,6 +35,6 @@ public class Cuenta {
         //nosebro 2
     }
     public void imprimir() {
-        System.out.printf("Saldo: %f\nConsignaciones: %d\nRetiros: %d\nTasa Anual: %f\nComision Mensual: %f", this.saldo, this.consignaciones, this.retiros, this.tasaAnual, this.comisionMensual);
+        System.out.printf("Saldo: %f\nConsignaciones: %d\nRetiros: %d\nTasa Anual: %f\nComision Mensual: %f\n", this.saldo, this.consignaciones, this.retiros, this.tasaAnual, this.comisionMensual);
     }
 }
