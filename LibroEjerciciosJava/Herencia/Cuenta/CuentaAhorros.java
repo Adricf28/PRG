@@ -5,7 +5,7 @@ public class CuentaAhorros extends Cuenta {
     //CONSTRUCTORES
     public CuentaAhorros(float saldo, float tasaAnual) {
         super(saldo, tasaAnual);
-        this.estado = this.saldo < 10000 ? true : false;
+        this.estado = saldo < 10000 ? false : true;
     }
 
     //METODOS
