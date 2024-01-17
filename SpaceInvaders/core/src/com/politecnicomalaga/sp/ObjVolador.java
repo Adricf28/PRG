@@ -92,8 +92,33 @@ public class ObjVolador {
         pantalla.draw(imagen, posX, posY);
     }
 
-    public boolean colisiona(NaveEnemiga alien) {
-        return this.posX == alien.getPosX();
+    public boolean colisiona(ObjVolador ovni) {
+        return this.colisionaFila(ovni) && this.colisionaColumna(ovni);
     }
 
+    public boolean colisionaFila(ObjVolador ovni) {
+        float x = this.posX;
+        float xw = this.posX + this.getWidth();
+        float x1 = ovni.getPosX();
+        float x1w1 = ovni.getPosX() + ovni.getWidth();
+
+        return (x1 >= x && x1 <= xw) || (x1w1 >= xw && x1w1 <= xw);
+    }
+
+    public boolean colisionaColumna(ObjVolador ovni) {
+        float y = this.posY;
+        float yh = this.posY + this.getHeight();
+        float y1 = ovni.getPosY();
+        float y1h1 = ovni.getPosY() + ovni.getHeight();
+
+        return (y1 >= y && y1 <= yh) || (y1h1 >= yh && y1h1 <= yh);
+    }
+
+    public int getWidth() {
+        return this.imagen.getWidth();
+    }
+
+    public int getHeight() {
+        return this.imagen.getHeight();
+    }
 }
