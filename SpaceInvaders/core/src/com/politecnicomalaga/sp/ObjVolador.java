@@ -102,7 +102,7 @@ public class ObjVolador {
         float x1 = ovni.getPosX();
         float x1w1 = ovni.getPosX() + ovni.getWidth();
 
-        return (x1 >= x && x1 <= xw) || (x1w1 >= xw && x1w1 <= xw);
+        return (x1 >= x && x1 <= xw) || (x1w1 >= x && x1w1 <= xw);
     }
 
     public boolean colisionaColumna(ObjVolador ovni) {
@@ -111,7 +111,7 @@ public class ObjVolador {
         float y1 = ovni.getPosY();
         float y1h1 = ovni.getPosY() + ovni.getHeight();
 
-        return (y1 >= y && y1 <= yh) || (y1h1 >= yh && y1h1 <= yh);
+        return (y1 >= y && y1 <= yh) || (y1h1 >= y && y1h1 <= yh);
     }
 
     public int getWidth() {
