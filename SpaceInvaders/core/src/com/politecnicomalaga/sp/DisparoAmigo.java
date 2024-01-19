@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class DisparoAmigo extends Disparo{
     //CONSTRUCTOR
-    public DisparoAmigo(float posX, float posY, float velX, float velY, SpriteBatch batch, Texture imagen) {
-        super(posX, posY, velX, velY, batch, imagen);
+    public DisparoAmigo(float posX, float posY, float velY, Texture imagen) {
+        super(posX, posY, velY, imagen);
     }
 }

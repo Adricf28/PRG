@@ -8,15 +8,17 @@ import java.util.ArrayList;
 public class NaveAmiga extends Nave{
     //ATRIBUTOS
     protected ArrayList<DisparoAmigo> rafagaAmiga;
+    Texture naveAmiga, explosion;
 
     //CONSTRUCTORES
     public NaveAmiga() {
         super();
         this.rafagaAmiga = new ArrayList<>();
+        Texture naveAmiga, explosion;
     }
 
-    public NaveAmiga(float posX, float posY, float velX, float velY, SpriteBatch batch, Texture imagen, boolean vivo, Texture explosion) {
-        super(posX, posY, velX, velY, batch, imagen, vivo, explosion);
+    public NaveAmiga(float posX, float posY, float velX, float velY, Texture naveAmiga, boolean vivo, Texture explosion) {
+        super(posX, posY, velX, velY, naveAmiga, vivo, explosion);
         this.rafagaAmiga = new ArrayList<>();
     }
 
@@ -26,29 +28,16 @@ public class NaveAmiga extends Nave{
     }
 
     public void setRafagaAmiga(ArrayList<DisparoAmigo> rafagaAmiga) {
+        for (DisparoAmigo unDisparo:this.rafagaAmiga) {
+            unDisparo.dispose();
+        }
         this.rafagaAmiga = rafagaAmiga;
     }
 
     //METODOS
-    /*
-    public void nosequeesesto (ArrayList<DisparoAmigo> lista) {
-        for (DisparoAmigo unDisparo:rafagaAmiga) {
-            unDisparo.dispose();
-        }
-
-        this.rafagaAmiga = lista;
-    }
-
     public void crearDisparo(Texture imagenDisparo) {
-        DisparoAmigo unDisparo =new DisparoAmigo(posX, posY, 2.0f, imagenDisparo);
+        DisparoAmigo unDisparo = new DisparoAmigo(posX, posY, 2.0f, imagenDisparo);
         rafagaAmiga.add(unDisparo);
-
-        /*Generalizacion
-        public void crearObjetoItem(argumentos...) {
-            ClaseItem objetoItem = new ClaseItem(argumentosItem...);
-            contenedor.add(objetoItem);
-        }
-
     }
 
     public boolean colisionDisparos(NaveEnemiga alien) {
@@ -62,11 +51,4 @@ public class NaveAmiga extends Nave{
         }
         return chocado;
     }
-
-    public void eliminarDisparoOut() {
-
-
-
-    }
-    */
 }

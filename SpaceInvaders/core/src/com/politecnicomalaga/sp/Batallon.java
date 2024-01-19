@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Batallon{
     //ATRIBUTOS
-    protected float posX, posY, velY;
     protected ArrayList<Escuadron> escuadrones;
+    protected Texture texEnemigos;
 
     //CONSTRUCTORES
     public Batallon() {

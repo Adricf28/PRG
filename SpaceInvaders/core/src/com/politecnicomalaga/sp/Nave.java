@@ -15,9 +15,9 @@ public class Nave extends ObjVolador{
         this.explosion = null;
     }
 
-    public Nave(float posX, float posY, float velX, float velY, SpriteBatch batch, Texture imagen, boolean vivo, Texture explosion) {
-        super(posX, posY, velX, velY, batch, imagen);
-        this.vivo = vivo;
+    public Nave(float posX, float posY, float velX, float velY, Texture imagen, boolean vivo, Texture explosion) {
+        super(posX, posY, velX, velY, imagen);
+        this.vivo = true;
         this.explosion = explosion;
     }
 

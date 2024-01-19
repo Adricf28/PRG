@@ -15,15 +15,13 @@ public class ObjVolador {
         this.posY = 0;
         this.velX = 0;
         this.velY = 0;
-        this.batch = null;
         this.imagen = null;
     }
-    public ObjVolador(float posX, float posY, float velX, float velY, SpriteBatch batch, Texture imagen) {
+    public ObjVolador(float posX, float posY, float velX, float velY, Texture imagen) {
         this.posX = posX;
         this.posY = posY;
         this.velX = velX;
         this.velY = velY;
-        this.batch = batch;
         this.imagen = imagen;
     }
 
@@ -58,14 +56,6 @@ public class ObjVolador {
 
     public void setVelY(float velY) {
         this.velY = velY;
-    }
-
-    public SpriteBatch getBatch() {
-        return batch;
-    }
-
-    public void setBatch(SpriteBatch batch) {
-        this.batch = batch;
     }
 
     public Texture getImagen() {
