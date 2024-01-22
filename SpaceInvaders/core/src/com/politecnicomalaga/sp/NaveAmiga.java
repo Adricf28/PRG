@@ -8,17 +8,15 @@ import java.util.ArrayList;
 public class NaveAmiga extends Nave{
     //ATRIBUTOS
     protected ArrayList<DisparoAmigo> rafagaAmiga;
-    Texture naveAmiga, explosion;
 
     //CONSTRUCTORES
     public NaveAmiga() {
         super();
         this.rafagaAmiga = new ArrayList<>();
-        Texture naveAmiga, explosion;
     }
 
-    public NaveAmiga(float posX, float posY, float velX, float velY, Texture naveAmiga, boolean vivo, Texture explosion) {
-        super(posX, posY, velX, velY, naveAmiga, vivo, explosion);
+    public NaveAmiga(float posX, float posY, float velX, float velY, Texture naveAmiga, Texture explosion, boolean vivo) {
+        super(posX, posY, velX, velY, naveAmiga, explosion, vivo);
         this.rafagaAmiga = new ArrayList<>();
     }
 

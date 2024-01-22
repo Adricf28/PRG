@@ -1,52 +1,34 @@
 package com.politecnicomalaga.sp;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import java.util.ArrayList;
 
 public class Batallon{
     //ATRIBUTOS
     protected ArrayList<Escuadron> escuadrones;
-    protected Texture texEnemigos;
 
     //CONSTRUCTORES
     public Batallon() {
-        this.posX = 0;
-        this.posY = 0;
-        this.velY = 0;
         this.escuadrones = new ArrayList<>(2);
     }
 
-    public Batallon(float posX, float posY, float velY) {
-        this.posX = posX;
-        this.posY = posY;
-        this.velY = velY;
-        this.escuadrones = new ArrayList<>(2);
+    public Batallon(Texture texEnemigos, Texture explosion, float altura, int numEsc, float ancho, float velX, float velY, int numNaves) {
+        float y, trozo;
+        trozo = (altura / 2) / (numEsc + 1);
+        y = trozo;
+
+        escuadrones = new ArrayList<>(numEsc);
+
+        for (int i = 0; i < numEsc; i++) {
+            Escuadron unEscuadron = new Escuadron(ancho, y, velX, velY, texEnemigos, explosion, numNaves);
+            escuadrones.add(unEscuadron);
+            y += trozo;
+        }
     }
 
     //GETTERS & SETTERS
-    public float getPosX() {
-        return posX;
-    }
-
-    public void setPosX(float posX) {
-        this.posX = posX;
-    }
-
-    public float getPosY() {
-        return posY;
-    }
-
-    public void setPosY(float posY) {
-        this.posY = posY;
-    }
-
-    public float getVelY() {
-        return velY;
-    }
-
-    public void setVelY(float velY) {
-        this.velY = velY;
-    }
-
     public ArrayList<Escuadron> getEscuadrones() {
         return escuadrones;
     }
@@ -56,7 +38,8 @@ public class Batallon{
     }
 
     //METODOS
-    public void mover() {
-        this.posY += this.velY;
+    @Override
+    public void draw(SpriteBatch batch) {
+        
     }
 }

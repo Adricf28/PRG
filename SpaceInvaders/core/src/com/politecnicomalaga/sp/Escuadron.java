@@ -1,5 +1,7 @@
 package com.politecnicomalaga.sp;
 
+import com.badlogic.gdx.graphics.Texture;
+
 import java.util.ArrayList;
 public class Escuadron{
     //ATRIBUTOS
@@ -8,6 +10,20 @@ public class Escuadron{
     //CONSTRUCTORES
     public Escuadron() {
         this.navesEnemigas = new ArrayList<>(12);
+    }
+
+    public Escuadron(float ancho, float posY, float velX, float velY, Texture texEnemigos, Texture explosion, boolean vivo, int numNaves) {
+        float x, trozo;
+        trozo = ancho / (numNaves+1);
+        x = trozo;
+
+        navesEnemigas = new ArrayList<>(numNaves);
+
+        for (int i = 0; i < numNaves; i++) {
+            NaveEnemiga unaNaveEnemiga = new NaveEnemiga(x, posY, velX, velY, texEnemigos, explosion, vivo);
+            this.navesEnemigas.add(unaNaveEnemiga);
+            x += trozo;
+        }
     }
 
     //GETTERS & SETTERS

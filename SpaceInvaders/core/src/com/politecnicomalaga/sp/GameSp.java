@@ -1,6 +1,7 @@
 package com.politecnicomalaga.sp;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -9,9 +10,8 @@ public class GameSp extends ApplicationAdapter {
     protected float ancho, alto;
     protected SpriteBatch batch;
     protected Batallon empire;
-    protected NaveAmiga luke;
-    protected Texture fondo, texAliados, texEnemigos, explosionAmiga, explosionEnemiga;
-    protected Nave nEnemiga, nAmiga, disparos;
+    protected Texture fondo, texAliados, texEnemigos, explosionAmiga, explosionEnemiga, dAmigo, dEnemigo;
+    protected NaveAmiga nAmiga;
 
     @Override
     public void create () {
@@ -24,26 +24,31 @@ public class GameSp extends ApplicationAdapter {
         texEnemigos = new Texture("Enemigo.png");
         explosionAmiga = new Texture("ExplosionPlayer.png");
         explosionEnemiga = new Texture("ExplosionAliens.png");
+        dAmigo = new Texture("DisparoAmigo.png");
+        dEnemigo = new Texture("DisparoEnemigo.png");
 
         //Naves
         nAmiga = new NaveAmiga(400, 600, 3, 0, texAliados, explosionAmiga, nAmiga.isVivo());
-        nEnemiga = new NaveEnemiga(0, 0, 0, 0, texEnemigos, explosionEnemiga, nEnemiga.isVivo());
-        empire = new Batallon(texEnemigos);
+        empire = new Batallon(texEnemigos, explosionEnemiga, Gdx.graphics.getHeight(), 2, Gdx.graphics.getWidth(), 3, 2, 12);
     }
 
     @Override
     public void render () {
         ScreenUtils.clear(1, 0, 0, 1);
         batch.begin();
-        batch.draw(aliados, 0, 0);
-        batch.draw(enemigos, 0, 0);
+        empire.draw(batch);
         batch.end();
     }
 
     @Override
     public void dispose () {
         batch.dispose();
-        aliados.dispose();
-        enemigos.dispose();
+        fondo.dispose();
+        texAliados.dispose();
+        texEnemigos.dispose();
+        explosionAmiga.dispose();
+        explosionEnemiga.dispose();
+        dAmigo.dispose();
+        dEnemigo.dispose();
     }
 }
