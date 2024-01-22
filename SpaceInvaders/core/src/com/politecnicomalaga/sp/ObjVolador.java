@@ -6,8 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class ObjVolador {
     //ATRIBUTOS
     protected float posX, posY, velX, velY;
-    protected SpriteBatch batch;
-    protected Texture imagen;
+    protected Texture texObjVolador;
 
     //CONSTRUCTORES
     public ObjVolador() {
@@ -15,14 +14,14 @@ public class ObjVolador {
         this.posY = 0;
         this.velX = 0;
         this.velY = 0;
-        this.imagen = null;
+        this.texObjVolador = null;
     }
-    public ObjVolador(float posX, float posY, float velX, float velY, Texture imagen) {
+    public ObjVolador(Texture texObjVolador, float posX, float posY, float velX, float velY) {
         this.posX = posX;
         this.posY = posY;
         this.velX = velX;
         this.velY = velY;
-        this.imagen = imagen;
+        this.texObjVolador = texObjVolador;
     }
 
     //GETTERS & SETTERS
@@ -58,12 +57,12 @@ public class ObjVolador {
         this.velY = velY;
     }
 
-    public Texture getImagen() {
-        return imagen;
+    public Texture gettexObjVolador() {
+        return texObjVolador;
     }
 
-    public void setImagen(Texture imagen) {
-        this.imagen = imagen;
+    public void settexObjVolador(Texture texObjVolador) {
+        this.texObjVolador = texObjVolador;
     }
 
     //METODOS
@@ -73,13 +72,13 @@ public class ObjVolador {
     }
 
     public void dispose() {
-        if (imagen != null) {
-            imagen.dispose();
+        if (texObjVolador != null) {
+            texObjVolador.dispose();
         }
     }
 
     public void draw(SpriteBatch pantalla) {
-        pantalla.draw(imagen, posX, posY);
+        pantalla.draw(texObjVolador, posX, posY);
     }
 
     public boolean colisiona(ObjVolador ovni) {
@@ -105,10 +104,10 @@ public class ObjVolador {
     }
 
     public int getWidth() {
-        return this.imagen.getWidth();
+        return this.texObjVolador.getWidth();
     }
 
     public int getHeight() {
-        return this.imagen.getHeight();
+        return this.texObjVolador.getHeight();
     }
 }

@@ -15,8 +15,8 @@ public class NaveAmiga extends Nave{
         this.rafagaAmiga = new ArrayList<>();
     }
 
-    public NaveAmiga(float posX, float posY, float velX, float velY, Texture naveAmiga, Texture explosion, boolean vivo) {
-        super(posX, posY, velX, velY, naveAmiga, explosion, vivo);
+    public NaveAmiga(Texture texNave, Texture explosion, float posX, float posY, float velX, float velY) {
+        super(texNave, explosion, posX, posY, velX, velY);
         this.rafagaAmiga = new ArrayList<>();
     }
 
@@ -33,8 +33,8 @@ public class NaveAmiga extends Nave{
     }
 
     //METODOS
-    public void crearDisparo(Texture imagenDisparo) {
-        DisparoAmigo unDisparo = new DisparoAmigo(posX, posY, 2.0f, imagenDisparo);
+    public void crearDisparo(Texture dAmigo) {
+        DisparoAmigo unDisparo = new DisparoAmigo(dAmigo, posX, posY, 2.0f);
         rafagaAmiga.add(unDisparo);
     }
 

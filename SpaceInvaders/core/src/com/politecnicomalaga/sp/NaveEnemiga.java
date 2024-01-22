@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class NaveEnemiga extends Nave {
     //ATRIBUTOS
+    protected Texture texEnemigos;
     protected ArrayList<DisparoEnemigo> rafagaEnemiga;
 
     //CONSTRUCTORES
@@ -15,8 +16,9 @@ public class NaveEnemiga extends Nave {
         this.rafagaEnemiga = new ArrayList<>();
     }
 
-    public NaveEnemiga(float posX, float posY, float velX, float velY, Texture texEnemigos, Texture explosion, boolean vivo) {
-        super(posX, posY, velX, velY, texEnemigos, explosion, vivo);
+    public NaveEnemiga(Texture texEnemigos, Texture explosion, float posX, float posY, float velX, float velY) {
+        super(texEnemigos, explosion, posX, posY, velX, velY);
+        this.texEnemigos = texEnemigos;
         this.rafagaEnemiga = new ArrayList<>();
     }
 
@@ -30,8 +32,14 @@ public class NaveEnemiga extends Nave {
     }
 
     //METODOS
-    public void crearDisparoEnemigo() {}
+    public void crearDisparo(Texture dEnemigo) {
+        DisparoEnemigo unDisparo = new DisparoEnemigo(dEnemigo, posX, posY, 2.0f);
+        rafagaEnemiga.add(unDisparo);
+    }
+
 
     @Override
-    public void draw(SpriteBatch pantalla) {}
+    public void draw(SpriteBatch batch) {
+        batch.draw(texEnemigos, posX, posY);
+    }
 }

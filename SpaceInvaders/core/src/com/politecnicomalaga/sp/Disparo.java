@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Disparo extends ObjVolador{
     //CONSTRUCTOR
-    public Disparo(float posX, float posY, float velY, Texture imagen) {
-        super(posX, posY, 0.0f, velY, imagen);
+    public Disparo(Texture disparo, float posX, float posY, float velY) {
+        super(disparo, posX, posY, 0.0f, velY);
     }
 }

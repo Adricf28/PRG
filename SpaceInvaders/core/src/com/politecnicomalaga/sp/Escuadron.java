@@ -1,6 +1,7 @@
 package com.politecnicomalaga.sp;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
 public class Escuadron{
@@ -12,7 +13,7 @@ public class Escuadron{
         this.navesEnemigas = new ArrayList<>(12);
     }
 
-    public Escuadron(float ancho, float posY, float velX, float velY, Texture texEnemigos, Texture explosion, boolean vivo, int numNaves) {
+    public Escuadron(Texture texEnemigos, Texture explosion, float ancho, float posY, float velX, float velY, int numNaves) {
         float x, trozo;
         trozo = ancho / (numNaves+1);
         x = trozo;
@@ -20,7 +21,7 @@ public class Escuadron{
         navesEnemigas = new ArrayList<>(numNaves);
 
         for (int i = 0; i < numNaves; i++) {
-            NaveEnemiga unaNaveEnemiga = new NaveEnemiga(x, posY, velX, velY, texEnemigos, explosion, vivo);
+            NaveEnemiga unaNaveEnemiga = new NaveEnemiga(texEnemigos, explosion, x, posY, velX, velY);
             this.navesEnemigas.add(unaNaveEnemiga);
             x += trozo;
         }
@@ -36,6 +37,10 @@ public class Escuadron{
     }
 
     //METODOS
-    public void draw() {}
+    public void draw(SpriteBatch batch) {
+        for (NaveEnemiga unEnemigo:navesEnemigas) {
+            unEnemigo.draw(batch);
+        }
+    }
     public void mover() {}
 }
