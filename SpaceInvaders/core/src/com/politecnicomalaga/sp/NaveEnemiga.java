@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import java.util.ArrayList;
 
 public class NaveEnemiga extends Nave {
-    //ATRIBUTOS
-    protected Texture texEnemigos;
     protected ArrayList<DisparoEnemigo> rafagaEnemiga;
 
     //CONSTRUCTORES
@@ -18,7 +16,6 @@ public class NaveEnemiga extends Nave {
 
     public NaveEnemiga(Texture texEnemigos, Texture explosion, float posX, float posY, float velX, float velY) {
         super(texEnemigos, explosion, posX, posY, velX, velY);
-        this.texEnemigos = texEnemigos;
         this.rafagaEnemiga = new ArrayList<>();
     }
 
@@ -28,18 +25,22 @@ public class NaveEnemiga extends Nave {
     }
 
     public void setrafagaEnemiga(ArrayList<DisparoEnemigo> rafagaEnemiga) {
+        for (DisparoEnemigo unDisparo:rafagaEnemiga) {
+            unDisparo.dispose();
+        }
         this.rafagaEnemiga = rafagaEnemiga;
     }
 
     //METODOS
-    public void crearDisparo(Texture dEnemigo) {
-        DisparoEnemigo unDisparo = new DisparoEnemigo(dEnemigo, posX, posY, 2.0f);
-        rafagaEnemiga.add(unDisparo);
+    public void disparar() {
+        //crearDisparo();
+        for (DisparoEnemigo unDEnemigo:rafagaEnemiga) {
+            unDEnemigo.mover();
+        }
     }
 
-
-    @Override
-    public void draw(SpriteBatch batch) {
-        batch.draw(texEnemigos, posX, posY);
+    public void crearDisparo(Texture dEnemigo) { //La textura en parametro o por constructor??
+        DisparoEnemigo unDisparo = new DisparoEnemigo(dEnemigo, posX, posY, 2.0f);
+        rafagaEnemiga.add(unDisparo);
     }
 }

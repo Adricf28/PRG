@@ -33,6 +33,9 @@ public class Escuadron{
     }
 
     public void setNavesEnemigas(ArrayList<NaveEnemiga> navesEnemigas) {
+        for (NaveEnemiga unEnemigo:navesEnemigas) {
+            unEnemigo.dispose();
+        }
         this.navesEnemigas = navesEnemigas;
     }
 
@@ -42,5 +45,20 @@ public class Escuadron{
             unEnemigo.draw(batch);
         }
     }
-    public void mover() {}
+
+    public void mover() {
+        for (NaveEnemiga unEnemigo:navesEnemigas) {
+            unEnemigo.mover();
+        }
+    }
+
+    public void disparar() {
+        //Disparan naves aleatorias || una de cada x
+        for (NaveEnemiga unEnemigo:navesEnemigas) {
+            int randInt = (int)(Math.random() * 100 + 1);
+            if (randInt > 50) {
+                unEnemigo.disparar();
+            }
+        }
+    }
 }

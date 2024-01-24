@@ -34,6 +34,9 @@ public class Batallon{
     }
 
     public void setEscuadrones(ArrayList<Escuadron> escuadrones) {
+        for (Escuadron unEscuadron:escuadrones) {
+            unEscuadron = null;
+        }
         this.escuadrones = escuadrones;
     }
 
@@ -41,6 +44,22 @@ public class Batallon{
     public void draw(SpriteBatch batch) {
         for (Escuadron unEscuadron:escuadrones) {
             unEscuadron.draw(batch);
+        }
+    }
+
+    public void mover() {
+        for (Escuadron unEscuadron:escuadrones) {
+            unEscuadron.mover();
+        }
+    }
+
+    public void disparar() {
+        //Disparan escuadrones aleatorios || uno de cada x
+        for (Escuadron unEscuadron:escuadrones) {
+            int randInt = (int)(Math.random() * 100 + 1);
+            if (randInt > 50) {
+                unEscuadron.disparar();
+            }
         }
     }
 }

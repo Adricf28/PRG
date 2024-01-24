@@ -37,7 +37,7 @@ public class GameSp extends ApplicationAdapter {
         batch.begin();
         batch.draw(fondo, 0, 0);
         empire.draw(batch);
-        //nAmiga.draw(batch);
+        nAmiga.draw(batch);
         batch.end();
     }
 
