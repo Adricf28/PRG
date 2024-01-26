@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class NaveEnemiga extends Nave {
     protected ArrayList<DisparoEnemigo> rafagaEnemiga;
+    protected Texture dEnemigo;
 
     //CONSTRUCTORES
     public NaveEnemiga() {
@@ -14,8 +15,9 @@ public class NaveEnemiga extends Nave {
         this.rafagaEnemiga = new ArrayList<>();
     }
 
-    public NaveEnemiga(Texture texEnemigos, Texture explosion, float posX, float posY, float velX, float velY) {
+    public NaveEnemiga(Texture texEnemigos, Texture explosion, Texture dEnemigo, float posX, float posY, float velX, float velY) {
         super(texEnemigos, explosion, posX, posY, velX, velY);
+        this.dEnemigo = dEnemigo;
         this.rafagaEnemiga = new ArrayList<>();
     }
 
@@ -33,13 +35,13 @@ public class NaveEnemiga extends Nave {
 
     //METODOS
     public void disparar() {
-        //crearDisparo();
+        crearDisparo();
         for (DisparoEnemigo unDEnemigo:rafagaEnemiga) {
             unDEnemigo.mover();
         }
     }
 
-    public void crearDisparo(Texture dEnemigo) { //La textura en parametro o por constructor??
+    public void crearDisparo() { //La textura en parametro o por constructor??
         DisparoEnemigo unDisparo = new DisparoEnemigo(dEnemigo, posX, posY, 2.0f);
         rafagaEnemiga.add(unDisparo);
     }

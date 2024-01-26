@@ -27,12 +27,33 @@ public class GameSp extends ApplicationAdapter {
         dEnemigo = new Texture("disparo.png");
 
         //Naves
-        nAmiga = new NaveAmiga(texAliados, explosionAmiga, (Gdx.graphics.getWidth()-315), 60, 3, 2);
-        empire = new Batallon(texEnemigos, explosionEnemiga, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), 3, 2, 5, 5);
+        nAmiga = new NaveAmiga(texAliados, explosionAmiga, dAmigo, Gdx.graphics.getWidth(), 60, 3, 2);
+        empire = new Batallon(texEnemigos, explosionEnemiga, dEnemigo, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), 3, 2, 5, 5);
     }
 
     @Override
     public void render () {
+        //Control de entrada
+        if (Gdx.input.justTouched()) {
+            int x = Gdx.input.getX();
+            int y = Gdx.input.getY();
+
+            if (y > Gdx.graphics.getHeight()/2) {
+                if (x < Gdx.graphics.getWidth()/2) {
+                    nAmiga.setVelX(-nAmiga.getVelX());
+                } else {
+                    nAmiga.setVelX(nAmiga.getVelX());
+                }
+            }
+        }
+
+        //Si la nave llega al borde, cambiar velocidad al 0
+        //Guardar como atributo en naveEnemiga al maxwidth para que no se pase al pintar
+        //Eliminar cosas si se pasan de la altura o anchura
+
+
+        nAmiga.mover();
+
         ScreenUtils.clear(0, 0, 0, 0);
         batch.begin();
         batch.draw(fondo, 0, 0);
