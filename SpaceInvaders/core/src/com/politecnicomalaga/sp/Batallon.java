@@ -14,7 +14,7 @@ public class Batallon{
         this.escuadrones = new ArrayList<>(2);
     }
 
-    public Batallon(Texture texEnemigos, Texture explosion, float ancho, float altura, float velX, float velY, int numEsc, int numNaves) {
+    public Batallon(Texture texEnemigos, Texture explosion, Texture dEnemigo, float ancho, float altura, float velX, float velY, int numEsc, int numNaves) {
         float y, trozo;
         trozo = (altura / 2) / (numEsc + 1);
         y = trozo;
@@ -22,9 +22,9 @@ public class Batallon{
         escuadrones = new ArrayList<>(numEsc);
 
         for (int i = 0; i < numEsc; i++) {
-            Escuadron unEscuadron = new Escuadron(texEnemigos, explosion, ancho, y, velX, velY, numNaves);
+            Escuadron unEscuadron = new Escuadron(texEnemigos, explosion, dEnemigo, ancho, y, velX, velY, numNaves);
             escuadrones.add(unEscuadron);
-            y += trozo;
+            y -= trozo;
         }
     }
 

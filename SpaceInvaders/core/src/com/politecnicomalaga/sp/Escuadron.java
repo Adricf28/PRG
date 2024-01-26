@@ -13,7 +13,7 @@ public class Escuadron{
         this.navesEnemigas = new ArrayList<>(12);
     }
 
-    public Escuadron(Texture texEnemigos, Texture explosion, float ancho, float posY, float velX, float velY, int numNaves) {
+    public Escuadron(Texture texEnemigos, Texture explosion, Texture dEnemigo, float ancho, float posY, float velX, float velY, int numNaves) {
         float x, trozo;
         trozo = ancho / (numNaves+1);
         x = trozo;
@@ -21,7 +21,7 @@ public class Escuadron{
         navesEnemigas = new ArrayList<>(numNaves);
 
         for (int i = 0; i < numNaves; i++) {
-            NaveEnemiga unaNaveEnemiga = new NaveEnemiga(texEnemigos, explosion, x, posY, velX, velY);
+            NaveEnemiga unaNaveEnemiga = new NaveEnemiga(texEnemigos, explosion, dEnemigo, x, posY, velX, velY);
             this.navesEnemigas.add(unaNaveEnemiga);
             x += trozo;
         }

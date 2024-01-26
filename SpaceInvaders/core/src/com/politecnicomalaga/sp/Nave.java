@@ -51,9 +51,4 @@ public class Nave extends ObjVolador{
             pantalla.draw(explosion, posX, posY);
         }
     }
-
-    @Override
-    public void mover() {
-        //Solo si esta dentro del los limites de la pantalla
-    }
 }
