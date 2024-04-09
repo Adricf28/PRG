@@ -1,0 +1,47 @@
+{
+    "informacionPersonal" : {
+        "nombre" : "Adrian",
+        "direccion" : "Calle Venegas 5",
+        "ciudad" : "Malaga",
+        "telefono" : "685225552",
+        "correo" : "acarfer2807@g.educaand.es"
+    },
+    "educacion" : [
+        {
+            "titulo" : "ESO",
+            "institucion" : "IES Miraflores de los Angeles",
+            "fechaInicio" : "15/09/2013",
+            "fechaFin" : "22/06/2017"
+        },
+        {
+            "titulo" : "Grado Medio Botanica",
+            "institucion" : "IES Los Prados",
+            "fechaInicio" : "15/09/2017",
+            "fechaFin" : "22/06/2019"
+        }
+    ],
+    "experienciaLaboral" : [
+        {
+            "puesto" : "Repartidor",
+            "empresa" : "Glovo",
+            "fechaInicio" : "02/02/2019",
+            "fechaFin" : "15/05/2020",
+            "responsabilidades" : "Repartir comida a tiempo y en buen estado"
+        },
+        {
+            "puesto" : "Mozo de almacen",
+            "empresa" : "Zara",
+            "fechaInicio" : "28/09/2022",
+            "fechaFin" : "30/10/2022",
+            "responsabilidades" : "Encargarse de todo tipo de tareas en el almacen"
+        },
+        {
+            "puesto" : "Mozo de almacen",
+            "empresa" : "Bakker Logistiek",
+            "fechaInicio" : "02/11/2022",
+            "fechaFin" : "14/01/2023",
+            "responsabilidades" : "Preparar pallets con productos lacteos para enviar en camiones"
+        }
+    ],
+    "habilidades" : ["Proactivo", "Insistente", "Paciente", "Social", "Bilingue"]
+}

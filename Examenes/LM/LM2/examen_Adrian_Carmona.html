@@ -1,0 +1,173 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>Muestra 1 para ejercicios html</title>
+    <style>
+        .boton{
+            border: 1px solid black;
+            padding: 2px 10px;
+            background: rgba(27,109,236,0.61);
+            color: white;
+            font-family: Arial, sans-seriff;
+            width: fit-content;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .paneles{
+            display:flex;
+            justify-content: center;
+            margin-top: 32px;
+        }    
+        .paneles figure{
+            width: 75px;
+        }
+        .activo{
+            color: blue;
+            font-family: Arial, "sans-serif";
+        }
+        .destacar{
+            font-size: 18px;
+            color:red;
+        }
+        .carrusel{
+            text-align: center;
+            background: #727c331a;
+            border:1px solid black;
+            width: fit-content;
+            margin: 24px auto;
+            width: 100px;
+            padding: 24px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="informacion"></div>
+        <section class="botones">
+            <div onclick="enlaces()" class="boton">Enlaces</div>
+            <div onclick="cambiar()" class="boton">Cambiar título</div>
+            <div onclick="crearDiv()" class="boton">Crear bloque</div>
+            <div onclick="borrarDiv()" class="boton">Borrar bloque</div>
+            <div onclick="fuentesImg()" class="boton">Fuentes</div>
+            <div onclick="intercalar()" class="boton">Subtitulo</div>
+        </section>        
+    <header><h1 id="titular" onclick="togleClase()">Hola Mundo</h1></header>
+    <div id="subtitulo" style="text-align:center">Página de muestra de javascript html</div>
+    <div class="paneles">
+    <figure onclick="ponerPie(this)"><img src="../imgs/uno.png" width="33" height="75" alt="Número 1">
+      <figcaption></figcaption></figure>
+    <figure onclick="ponerPie(this)"><img src="../imgs/dos.png" width="50" height="75" alt="Número 2">
+      <figcaption></figcaption></figure>
+    <figure onclick="ponerPie(this)"><img src="../imgs/tres.png" width="49" height="75" alt="Número 3">
+      <figcaption></figcaption></figure>    
+    </div>    
+    <div id="fuentes"></div>
+    <div class="carrusel" data-img="0" onclick="cambiaImg()">
+        <img src="../imgs/cuatro.png" alt="Diapositivas" id="diapo">
+    </div> 
+    <p>Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscing elit</a>. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. <a href="http://prueba2">Fusce porta</a>. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</p>
+    <p>Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin consequat auctor diam. <a href="http://prueba">Ut bibendum blandit est</a>. Curabitur vestibulum. Nunc malesuada porttitor sapien. Aenean a lacus et metus venenatis porta. Suspendisse cursus, sem non dapibus tincidunt, lorem magna porttitor felis, id sodales dolor dolor sed urna. Sed rutrum nulla vitae tellus. Sed quis eros nec lectus tempor lacinia. Aliquam nec lectus nec neque aliquet dictum. Etiam <a href="http://prueba3">consequat sem quis massa</a>. Donec aliquam euismod diam. In magna massa, mattis id, pellentesque sit amet, porta sit amet, lectus. Curabitur posuere. Aliquam in elit. Fusce condimentum, arcu in scelerisque lobortis, ante arcu scelerisque mi, at cursus mi risus sed tellus.</p>
+    <p>Donec sagittis, nibh nec ullamcorper tristique, pede velit feugiat massa, at sollicitudin justo tellus vitae justo. Vestibulum aliquet, nulla sit amet imperdiet suscipit, nunc erat laoreet est, a <a href="http://prueba">aliquam leo odio sed sem</a>. Quisque eget eros vehicula diam euismod tristique. Ut dui. Donec in metus sed risus laoreet sollicitudin. Proin et nisi non arcu sodales hendrerit. In sem. Cras id augue eu lorem dictum interdum. Donec pretium. Proin <a href="http://prueba4">egestas</a> adipiscing ligula. Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sed non lectus non est pellentesque</a> auctor.</p>   
+    <!-- inicio de las funciones javascript pedidas en los ejercicios -->
+    <script>
+
+    function cambiar(){
+        //Pregunta 1
+        var titular = document.getElementById("titular");
+        titular.innerHTML = "Hola Mundo con Javascript";
+
+        //Pregunta 2
+        titular.style.color = "red";
+        titular.style.textAlign = "center";
+    }
+
+    function enlaces(){
+        //Pregunta 3
+        var info = document.getElementById("informacion");
+        var enlaces = document.getElementsByTagName("a");
+        var contador = 0;
+
+        for (var i = 0; i < enlaces.length; i++) {
+            if (enlaces[i].href == "http://prueba/") {
+                contador++;
+            }
+        }
+
+        info.innerHTML = "Número de enlaces que enlazan a http://prueba/ --> " + contador;
+
+        //Pregunta 4
+        info.innerHTML += "<br>Direccion antepenultimo enlace: " + enlaces[enlaces.length - 3].href;
+
+        //Pregunta 5
+        var parrafos = document.getElementsByTagName("p");
+        var enlaces2p = parrafos[1].getElementsByTagName("a");
+
+        info.innerHTML += "<br>Numero de enlaces del segundo parrafo: " + enlaces2p.length;
+    }
+
+    function crearDiv(){
+        //Pregunta 6
+        var nuevoDiv = document.createElement("div");
+        var botones = document.getElementsByClassName("botones")[0];
+
+        nuevoDiv.style.color = "white";
+        nuevoDiv.style.backgroundColor = "red";
+        nuevoDiv.style.textAlign = "center";
+        nuevoDiv.innerHTML = "Javascript permite crear páginas dinámicas";
+
+        botones.insertAdjacentElement("afterend", nuevoDiv);
+    }
+
+    function borrarDiv(){
+        //Pregunta 7
+        var subtitulo = document.getElementById("subtitulo");
+
+        if (subtitulo != null) {
+            subtitulo.remove();
+        }
+    }
+
+    function intercalar(){
+        //Pregunta 8
+        var divNuevo = document.createElement("div");
+        var titular = document.getElementById("titular");
+
+        divNuevo.innerHTML = "Página examen.html";
+        divNuevo.style.fontWeight = "bold";
+
+        titular.insertAdjacentElement("afterend", divNuevo);
+    }
+
+    function fuentesImg(){
+        //Pregunta 9
+        var imagenes = document.getElementsByTagName("img");
+        var fuentes = document.getElementById("fuentes");
+
+        fuentes.innerHTML = "URLs de las imagenes:<br>"
+        for (var i = 0; i < imagenes.length; i++) {
+            fuentes.innerHTML += imagenes[i].src + "<br>";
+        }
+    }
+
+    function ponerPie(fig){
+        //Pregunta 10
+        var imagen = fig.getElementsByTagName("img")[0];
+        var pieDeFoto = fig.getElementsByTagName("figcaption")[0];
+
+        if (pieDeFoto.innerHTML == "") {
+            pieDeFoto.innerHTML = imagen.alt;
+        } else {
+            pieDeFoto.innerHTML = "";
+        }
+    }
+
+    function togleClase(){
+        
+    }
+        
+    function cambiaImg(){
+        
+    }
+
+    </script>    
+    
+    
+    </body></html> 
