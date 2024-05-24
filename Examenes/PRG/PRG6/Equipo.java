@@ -85,6 +85,10 @@ public class Equipo {
         this.telefono = telefono;
     }
 
+    public Map<String, Jugador> getJugadores() {
+        return jugadores;
+    }
+
     //METODOS
     public boolean cambiarDisponibilidad(String dniJugador, boolean disponible) {
         if (jugadores.get(dniJugador) == null) {

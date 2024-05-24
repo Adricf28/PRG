@@ -66,7 +66,7 @@ public class Competicion {
     public boolean eliminarEquipo(String codEq) {
         for (Equipo i:equipos) {
             if (i.getCodEquipo().equals(codEq)) {
-                return equipos.remove(i);
+                if (i.getJugadores().isEmpty()) return equipos.remove(i);
             }
         }
         return false;

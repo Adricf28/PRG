@@ -107,6 +107,9 @@ public class Main {
 
         System.out.print("Introduce el codigo de equipo del jugador a añadir: ");
         String codEq = sc.nextLine();
+
+        if (miCompeticion.buscarEquipo(codEq) == null) return false;
+
         System.out.println("Introduce los datos del nuevo jugador");
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
@@ -127,6 +130,9 @@ public class Main {
     public static boolean fueraJugador() {
         System.out.print("Introduce el codigo de equipo del jugador a eliminar: ");
         String codEq = sc.nextLine();
+
+        if (miCompeticion.buscarEquipo(codEq) == null) return false;
+
         System.out.print("Introduce el DNI del jugador: ");
         String dni = sc.nextLine();
 
@@ -138,6 +144,9 @@ public class Main {
 
         System.out.print("Introduce el codigo de equipo del jugador: ");
         String codEq = sc.nextLine();
+
+        if (miCompeticion.buscarEquipo(codEq) == null) return false;
+
         System.out.print("Introduce el DNI del jugador: ");
         String dni = sc.nextLine();
         System.out.print("Elige una opcion:\na) Cambiar a disponible\nb) Cambiar a no disponible");
