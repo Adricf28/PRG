@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvMainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1.5"
+        android:layout_margin="12dp"
+        android:text="TMDB Series and Movies Database"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/llButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintVertical_weight="2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/rvMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMainTitle"
+        >
+        <Button
+            android:id="@+id/btSearchMovies"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginRight="12dp"
+            android:layout_height="match_parent"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:text="Movies"
+             />
+
+        <Button
+            android:id="@+id/btSearchSeries"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:text="Series"
+            />
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llButtons"
+        app:layout_constraintVertical_weight="22" />
+
+    <LinearLayout
+        android:id="@+id/llButtonsMiddle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_marginVertical="210dp"
+        app:layout_constraintVertical_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/llButtons"
+        app:layout_constraintBottom_toTopOf="@id/llButtonsDown2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <Button
+            android:id="@+id/btRojo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="180dp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="match_parent"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:text="Color rojo"
+            android:textSize="10dp"
+            />
+
+        <Button
+            android:id="@+id/btVerde"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="12dp"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:text="Color verde"
+            android:textSize="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llButtonsDown2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintVertical_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/llButtonsDown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <Button
+            android:id="@+id/btPag2"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="match_parent"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:text="Pag 2"
+            android:textSize="14dp"
+            />
+
+        <EditText
+            android:id="@+id/etBuscaPag"
+            android:layout_width="62dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:ems="10"
+            android:hint="Página..."
+            android:textAlignment="center"
+            android:inputType="number"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:singleLine="true"
+            android:maxLines="1"
+             />
+
+
+        <Button
+            android:id="@+id/btBuscar"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="20dp"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:text="Buscar"
+            android:textSize="8dp"
+            />
+
+        <Button
+            android:id="@+id/btPag22"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="12dp"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:text="Pag 22"
+            android:textSize="14dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llButtonsDown"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintVertical_weight="1"
+        android:background="#CC000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <Button
+            android:id="@+id/btAtras"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="match_parent"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:text="Ant"
+            android:textSize="22dp"
+            />
+
+        <TextView
+            android:id="@+id/Pag"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Pag.."
+            android:textColor="@color/white"
+            android:background="@color/background_button"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btDelante"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="12dp"
+            app:backgroundTint="@color/background_button"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:text="Sig"
+            android:textSize="22dp"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

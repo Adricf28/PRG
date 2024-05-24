@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_button">#1539EB</color>
+    <color name="background_button2">#820606</color>
+
+    <color name="azul">#37ADFD</color>
+    <color name="verde">#38FFAF</color>
+    <color name="verdeClaro">#BCFF20</color>
+    <color name="amarillo">#FFEB38</color>
+    <color name="morado">#EB2BFF</color>
+    <color name="rosa">#FD0F7E</color>
+</resources>
