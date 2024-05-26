@@ -1,0 +1,8 @@
+{ "nombre": "JORGE ALEJANDRO",
+"apellidos": "MARTINEZ PAZOS",
+"mail": "caca@caca.com";
+"documento": {
+	"tipo": "DNI",
+	"numero": "34505855"
+}
+}

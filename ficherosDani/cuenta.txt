@@ -1,0 +1,4 @@
+Cuenta{ccc='22';saldo=22.0;fechaApertura='22';
+miCliente=Cliente{nombre='JORGE ALEJANDRO';apellidos='MARTINEZ PAZOS';mail='caca@caca.com';miDocumento=null;
+;
+miOperacion=[];

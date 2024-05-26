@@ -100,7 +100,9 @@ public class Main {
         System.out.print("Telefono: ");
         String telefono = sc.nextLine();
 
-        return miCompeticion.addEquipo(new Equipo(codEq, descripcion, nombre, apellidos, ciudad, email, telefono));
+        Equipo miEquipo = new Equipo(codEq, descripcion, nombre, apellidos, ciudad, email, telefono);
+
+        return miCompeticion.addEquipo(miEquipo);
     }
 
     public static boolean nuevoJugador() {
@@ -181,3 +183,5 @@ public class Main {
         }
     }
 }
+
+

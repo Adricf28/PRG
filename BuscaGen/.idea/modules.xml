@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dentistaJSON.iml" filepath="$PROJECT_DIR$/dentistaJSON.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BuscaGen.iml" filepath="$PROJECT_DIR$/.idea/BuscaGen.iml" />
     </modules>
   </component>
 </project>
