@@ -1,5 +1,6 @@
 package com.politecnicomalaga.entidadbancaria;
 
+import javax.annotation.processing.Filer;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class ControladorFicheros {
         boolean resultado = false;
 
         try {
-                fo = new FileWriter(fileName);
+            fo = new FileWriter(fileName);
 
             //fo = new FileWriter(fileName); //Abrimos el fichero, modo append false
             pw = new PrintWriter(fo); //Creamos el ayudante
@@ -81,5 +82,4 @@ public class ControladorFicheros {
         }
         return resultado;
     }
-
 }
