@@ -1,0 +1,23 @@
+{
+  "artifact":"Antena Exterior",
+  "architecture": "digital 16bits",
+  "productID": 2776,
+  "sensors": [
+    {
+      "type": 664,
+      "num": 2,
+      "fields": [
+        {"name": "Voltage", "unit": "V", "decPrecision": 3},
+        {"name": "Current", "unit": "A", "decPrecision": 1}
+      ]
+    },
+    {
+      "type": 665,
+      "num": 1,
+      "fields": [
+        {"name": "Temperature", "unit": "C", "decPrecision": 1},
+        {"name": "Humidity", "unit": "%", "decPrecision": 1}
+      ]
+    }
+  ]
+}
